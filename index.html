@@ -328,6 +328,24 @@ section{padding:110px 0;position:relative;z-index:1;}
 .project-sub{font-size:13px;color:var(--text-dim);margin-bottom:16px;}
 .project-card p.desc{font-size:14.5px;color:var(--text-mid);line-height:1.7;margin-bottom:18px;}
 .project-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+.project-links{display:flex;gap:10px;margin-top:18px;}
+.project-link{
+  font-family:'JetBrains Mono',monospace;font-size:12.5px;
+  padding:7px 14px;border-radius:8px;
+  border:1px solid var(--line);color:var(--text-mid);
+  transition:all .2s;display:inline-flex;align-items:center;gap:6px;
+}
+.project-link:hover{border-color:var(--blue-glow);color:var(--text);background:var(--bg-panel-2);}
+.project-link.live{border-color:rgba(56,225,198,0.35);color:var(--cyan);}
+.project-link.live::before{
+  content:"";width:6px;height:6px;border-radius:50%;background:var(--cyan);
+  box-shadow:0 0 0 0 rgba(56,225,198,0.6);animation:live-pulse 1.8s infinite;
+}
+@keyframes live-pulse{
+  0%{box-shadow:0 0 0 0 rgba(56,225,198,0.55);}
+  70%{box-shadow:0 0 0 6px rgba(56,225,198,0);}
+  100%{box-shadow:0 0 0 0 rgba(56,225,198,0);}
+}
 .tag{
   font-family:'JetBrains Mono',monospace;font-size:11.5px;
   padding:5px 10px;border-radius:6px;
@@ -622,6 +640,30 @@ footer{
     <div class="sec-label">Selected Work</div>
     <h2 class="sec-title">Projects</h2>
     <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-card-inner" style="transform: rotateY(0deg) rotateX(0deg) translateZ(0px);">
+          <span class="project-status">Live · AI / Python</span>
+          <h3>AI Study Assistant</h3>
+          <div class="project-sub">Python · Streamlit · Google Gemini API</div>
+          <p class="desc">An AI-powered study assistant that helps students understand topics, summarise content, and prepare for exams through simple, student-friendly explanations.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Streamlit</span>
+            <span class="tag">Gemini API</span>
+          </div>
+          <ul class="project-features">
+            <li>Explain Topic mode with beginner-friendly examples</li>
+            <li>Summarise study content into concise notes</li>
+            <li>Auto-generate MCQs for practice</li>
+            <li>Create quick-revision flashcards</li>
+          </ul>
+          <div class="project-links">
+            <a class="project-link" href="https://github.com/dusharaekanayaka0314-coder/AI-study-assistant" target="_blank" rel="noopener">GitHub</a>
+            <a class="project-link live" href="https://ai-study-assistant-3g7jknr9fkbx7bnejv4x6n.streamlit.app" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </div>
+      </div>
 
       <div class="project-card">
         <div class="project-card-inner" style="transform: rotateY(0deg) rotateX(0deg) translateZ(0px);">
